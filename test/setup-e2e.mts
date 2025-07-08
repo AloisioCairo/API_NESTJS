@@ -33,6 +33,7 @@ beforeAll(async () => {
 })
 
 afterAll(async () => {
+  // Deleta o schema do banco de teste 
     await prisma.$executeRawUnsafe(`DROP SCHEMA IF EXISTS "${schemaId}" CASCADE`)
     await prisma.$disconnect()
 })

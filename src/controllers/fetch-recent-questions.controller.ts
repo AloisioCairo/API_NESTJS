@@ -1,3 +1,5 @@
+// Controller de listagem de pergunta
+
 import { Controller, Get, Query, UseGuards } from '@nestjs/common'
 import { JwtAuthGuard } from '@/auth/jwt-auth.guard'
 import { ZodValidationPipe } from '@/pipes/zod-validation-pipe'
@@ -22,7 +24,8 @@ export class FetchRecentQuestionsController {
 
   @Get()
   async handle(@Query('page', queryValidationPipe) page: PageQueryParamSchema) {
-    const perPage = 1
+    // const perPage = 1
+    const perPage = 20
 
     const questions = await this.prisma.question.findMany({
       take: perPage,

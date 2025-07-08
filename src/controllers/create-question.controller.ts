@@ -26,7 +26,7 @@ export class CreateQuestionController {
     @CurrentUser() user: UserPayload,
   ) {
     const { title, content } = body
-    const userId = user.sub
+    const userId = user.sub // Pega o ID do usuário logado
 
     const slug = this.convertToSlug(title)
 
