@@ -41,7 +41,7 @@ export class AnswerQuestionUseCase {
       })
     })
 
-    answer.attachments = new AnswerAttachmentList(answerAttachments)
+    // answer.attachments = new AnswerAttachmentList(answerAttachments)
 
     await this.answersRepository.create(answer)
 
